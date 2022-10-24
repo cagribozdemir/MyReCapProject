@@ -34,17 +34,19 @@ namespace Business.Concrete
 
         public IDataResult<List<Brand>> GetAll()
         {
-            throw new NotImplementedException();
+            return new SuccessDataResult<List<Brand>>(_brandDal.GetAll(), Messages.BrandListed);
         }
 
         public IDataResult<Brand> GetById(int brandId)
         {
-            throw new NotImplementedException();
+            return new SuccessDataResult<Brand>(_brandDal.Get(b => b.BrandId == brandId));
         }
 
         public IResult Update(Brand brand)
         {
-            throw new NotImplementedException();
+            _brandDal.Update(brand);
+
+            return new SuccessResult(Messages.BrandUpdated);
         }
     }
 }
