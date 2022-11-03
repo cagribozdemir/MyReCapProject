@@ -5,7 +5,13 @@ using Entities.Concrete;
 
 //AddTest(carManager);
 //CarManagerTest();
-RentalTest();
+//RentalTest();
+CarManager carManager = new CarManager(new EfCarDal());
+var result = carManager.GetCarDetailDtos();
+foreach (var car in result.Data)
+{
+    Console.WriteLine(car.ModelYear + " model " + car.ColorName + car.BrandName + " " + car.DailyPrice + " TL");
+}
 
 static void AddTest(CarManager carManager)
 {
