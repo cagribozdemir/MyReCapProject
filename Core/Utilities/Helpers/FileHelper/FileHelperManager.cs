@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Core.Utilities.Helpers.FileHelper
 {
-    public class FileHeplerManager : IFileHelper
+    public class FileHelperManager : IFileHelper
     {
         public void Delete(string filePath)
         {
